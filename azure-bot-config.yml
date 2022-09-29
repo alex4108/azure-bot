@@ -1,0 +1,5 @@
+vms:
+  - logical_name: A
+    azurevm_name: B
+    resource_group: C
+    subscription_id: D

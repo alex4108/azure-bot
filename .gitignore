@@ -1,0 +1,10 @@
+env
+sqlite.db
+*.env
+.env
+.vscode/
+*/private/*
+scripts/local-me.sh
+bin
+bin/*
+secrets/*
