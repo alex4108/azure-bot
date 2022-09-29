@@ -3,7 +3,7 @@ module github.com/alex4108/azure-bot
 go 1.18
 
 require (
-	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.0.0
+	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.1.0
 	github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/compute/armcompute v1.0.0
 	github.com/bwmarrin/discordgo v0.26.1
 	github.com/sirupsen/logrus v1.9.0
@@ -13,7 +13,7 @@ require (
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.0.0 // indirect
 	github.com/Azure/azure-sdk-for-go/sdk/internal v1.0.0 // indirect
-	github.com/AzureAD/microsoft-authentication-library-for-go v0.4.0 // indirect
+	github.com/AzureAD/microsoft-authentication-library-for-go v0.5.1 // indirect
 	github.com/golang-jwt/jwt v3.2.1+incompatible // indirect
 	github.com/google/uuid v1.1.1 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
