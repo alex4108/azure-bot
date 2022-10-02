@@ -262,7 +262,7 @@ func stopCommand(s *discordgo.Session, m *discordgo.MessageCreate) {
 		respondError(s, m.ChannelID)
 		return
 	}
-	poller, err := client.BeginPowerOff(
+	poller, err := client.BeginDeallocate(
 		context.Background(),
 		resourceGroup,
 		vmName,
