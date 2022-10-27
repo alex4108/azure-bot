@@ -7,8 +7,8 @@ endif
 .DEFAULT_GOAL := build
 
 build:
-	cd ./src && go mod tidy
-	cd ./src && go build -o ../bin/azure-bot
+	go mod tidy
+	go build -o ./bin/azure-bot
 
 docker: build
 	docker build -t $(AZURE_BOT_TAG) .

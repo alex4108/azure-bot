@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 	"os/signal"
-	"strings"
 	"syscall"
 
 	"github.com/bwmarrin/discordgo"
@@ -88,15 +87,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		return
 	}
 
-	if strings.Split(m.Content, " ")[0] == "$startvm" {
-		go startCommand(s, m)
-	} else if strings.Split(m.Content, " ")[0] == "$stopvm" {
-		go stopCommand(s, m)
-	} else if m.Content == "$help" {
-		go helpCommand(s, m)
-	} else if m.Content == "$ping" {
-		go pingCommand(s, m)
-	}
+	commandRouter(s, m)
 }
 
 // NewConfig returns a new decoded Config struct

@@ -78,6 +78,10 @@ data:
 * Once the authorization URL is copied, replace the permissions integer with that from the URL given above to join the public bot to your server.
 * You should now be able to visit your authorization URL and join your own bot to your Discord guild.
 
+## Using the bot
+
+Once the bot is joined, in any channel it has read access to, send a message `$help`.  This command will enumerate all the commands the bot currently supports.
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.

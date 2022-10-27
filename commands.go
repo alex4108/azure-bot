@@ -168,6 +168,64 @@ func stopCommand(s *discordgo.Session, m *discordgo.MessageCreate) {
 	respond(s, m.ChannelID, "VM "+targetVM+" stopped.")
 }
 
+func stateCommand(s *discordgo.Session, m *discordgo.MessageCreate) {
+	targetVM, err := getTargetVMFromCommand(m.Content)
+	if err != nil {
+		response := fmt.Sprintf("Failed to stop the VM: %v", err)
+		respond(s, m.ChannelID, response)
+		return
+	}
+
+	log.Infof("Received state command for VM: %v", targetVM)
+
+	resourceGroup, err := getResourceGroupFromConfig(targetVM)
+	if err != nil {
+		response := fmt.Sprintf("Failed to get state for the VM: %v", err)
+		respond(s, m.ChannelID, response)
+		return
+	}
+
+	vmName, err := getVMNameFromConfig(targetVM)
+	if err != nil {
+		response := fmt.Sprintf("Failed to get state for the VM: %v", err)
+		respond(s, m.ChannelID, response)
+		return
+	}
+
+	subscriptionId, err := getSubscriptionIdFromConfig(targetVM)
+	if err != nil {
+		response := fmt.Sprintf("Failed to get state for the VM: %v", err)
+		respond(s, m.ChannelID, response)
+		return
+	}
+
+	respond(s, m.ChannelID, fmt.Sprintf("Getting State for VM %v...", targetVM))
+	cred, err := azidentity.NewDefaultAzureCredential(nil)
+	if err != nil {
+		log.Errorf("failed to obtain a credential: %v", err)
+		respondError(s, m.ChannelID)
+		return
+	}
+
+	client, err := armcompute.NewVirtualMachinesClient(subscriptionId, cred, nil)
+	if err != nil {
+		log.Errorf("failed to create VM client: %v", err)
+		respondError(s, m.ChannelID)
+		return
+	}
+	ctx := context.Background()
+	res, err := client.InstanceView(ctx,
+		resourceGroup,
+		vmName,
+		nil)
+	if err != nil {
+		log.Fatalf("failed to finish the request: %v", err)
+	}
+
+	log.Infof("Got info for VM %v.", targetVM)
+	respond(s, m.ChannelID, fmt.Sprintf("VM Info: \n%v", res.Statuses))
+}
+
 // pingCommand is the command handler to ping the bot.
 func pingCommand(s *discordgo.Session, m *discordgo.MessageCreate) {
 	now := time.Now()
