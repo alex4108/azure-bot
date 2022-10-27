@@ -226,9 +226,9 @@ func stateCommand(s *discordgo.Session, m *discordgo.MessageCreate) {
 	status := ""
 	for k, r := range res.Statuses {
 		if k == 0 {
-			status = fmt.Sprintf(status+"Provisioning State: %v |", r.DisplayStatus)
+			status = fmt.Sprintf(status+"Provisioning State: %v | ", *r.DisplayStatus)
 		} else if k == 1 {
-			status = fmt.Sprintf(status+"Running State: %v |", r.DisplayStatus)
+			status = fmt.Sprintf(status+"Running State: %v", *r.DisplayStatus)
 		}
 	}
 	respond(s, m.ChannelID, fmt.Sprintf("VM Info: \n%v", status))
