@@ -3,9 +3,8 @@ RUN apk update
 RUN apk upgrade
 RUN apk add --update go gcc g++
 WORKDIR /app
-COPY ./main.go /app
-COPY ./go.mod /app
-COPY ./go.sum /app
+COPY *.go /app/
+COPY go.* /app/
 RUN GOOS=linux go build -o ./azure-bot
 
 FROM alpine:3.16
