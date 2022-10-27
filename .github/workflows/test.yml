@@ -1,7 +1,5 @@
 name: Build, Test, Deploy to Stage
 
-permissions: "read-all"
-
 on:
   pull_request:
     branches: ["main"]
