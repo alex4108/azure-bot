@@ -4,6 +4,8 @@ ifndef AZURE_BOT_TAG
 override AZURE_BOT_TAG = azure-bot
 endif
 
+.DEFAULT_GOAL := build
+
 build:
 	go mod tidy
 	go build -o ./bin/azure-bot

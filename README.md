@@ -1,11 +1,11 @@
 # Azure Discord Bot
 
 [![Tests](https://github.com/alex4108/azure-bot/actions/workflows/test.yml/badge.svg)](https://github.com/alex4108/azure-bot/actions/workflows/test.yml)
-[![Release](https://github.com/alex4108/azure-bot/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/alex4108/azure-bot/actions/workflows/release.yml)
+[![Release](https://github.com/alex4108/azure-bot/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/alex4108/azure-bot/actions/workflows/release.yml)
 [![GitHub forks](https://img.shields.io/github/forks/alex4108/azure-bot)](https://github.com/alex4108/azure-bot/network)
 [![GitHub stars](https://img.shields.io/github/stars/alex4108/azure-bot)](https://github.com/alex4108/azure-bot/stargazers)
 ![GitHub contributors](https://img.shields.io/github/contributors/alex4108/azure-bot)
-[![GitHub license](https://img.shields.io/github/license/alex4108/azure-bot)](https://github.com/alex4108/azure-bot/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/alex4108/azure-bot)](https://github.com/alex4108/azure-bot/blob/main/LICENSE)
 ![GitHub All Releases](https://img.shields.io/github/downloads/alex4108/azure-bot/total)
 ![Docker Pulls](https://img.shields.io/docker/pulls/alex4108/azure-bot)
 [![Discord](https://img.shields.io/discord/742969076623605830)](https://discord.gg/FpDjFEQ)
