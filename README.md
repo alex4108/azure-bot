@@ -92,3 +92,4 @@ Contributions are what make the open source community such an amazing place to b
 1. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 1. Push to the branch (`git push origin feature/AmazingFeature`)
 1. [Open a pull request](https://github.com/alex4108/azure-bot/compare)
+
